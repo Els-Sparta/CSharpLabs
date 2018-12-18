@@ -44,8 +44,11 @@ namespace Lab18_GUI_Entity
         private void SearchOrder_Click(object sender, RoutedEventArgs e)
         {
             var order =
+
                 from p in DBContext.Products
-                from c in DBContext.Customers
+                join od in DBContext.Order_Details on p.ProductID equals od.ProductID
+                join o in DBContext.Orders on od.OrderID equals o.OrderID
+                join c in DBContext.Customers on o.CustomerID equals c.CustomerID
                 where c.ContactName == showName.Text
                 select p;
 
