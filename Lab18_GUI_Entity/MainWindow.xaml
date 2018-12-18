@@ -19,16 +19,16 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="listBox01" Grid.Column="0" Grid.Row="3" DisplayMemberPath="ContactName" SelectionChanged="ListBox01_SelectionChanged" />
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="Search Customer by CustomerCity" TextAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox x:Name="searchBox" Grid.Column="0" Grid.Row="1"/>
+        <ListBox Background="AliceBlue" x:Name="listBox01" Grid.Column="0" Grid.Row="3" DisplayMemberPath="ContactName" SelectionChanged="ListBox01_SelectionChanged" />
+        <TextBlock Background="AliceBlue" Grid.Column="0" Grid.Row="0" Text="Search Customer by CustomerCity" TextAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Background="AliceBlue" x:Name="searchBox" Grid.Column="0" Grid.Row="1"/>
         <Button x:Name="searchButt" Grid.Column="0" Grid.Row="2" Content="Search" Click="SearchButt_Click"/>
-        <TextBlock Grid.Column="1" Grid.Row="0" Text="Customer" TextAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Grid.Row="1" Text="" TextAlignment="Center" VerticalAlignment="Center" x:Name="showName" Grid.Column="1"/>
+        <TextBlock Background="Aquamarine" Grid.Column="1" Grid.Row="0" Text="Customer" TextAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Background="Aquamarine" Grid.Row="1" Text="" TextAlignment="Center" VerticalAlignment="Center" x:Name="showName" Grid.Column="1"/>
         <Button x:Name="searchOrder" Grid.Column="1" Grid.Row="2" Content="Search Orders" Click="SearchOrder_Click"/>
-        <ListBox x:Name="listBox02" Grid.Column="1" Grid.Row="3" DisplayMemberPath="ProductName" SelectionChanged="ListBox02_SelectionChanged"/>
-        <TextBlock Grid.Column="2" Grid.Row="0" Text="Order Details" TextAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="2" Grid.Row="1" Text="" TextAlignment="Center" VerticalAlignment="Center" x:Name="productName"/>
+        <ListBox Background="Aquamarine" x:Name="listBox02" Grid.Column="1" Grid.Row="3" DisplayMemberPath="OrderID" SelectionChanged="ListBox02_SelectionChanged"/>
+        <TextBlock Background="DarkSlateBlue" Grid.Column="2" Grid.Row="0" Text="Order Details" TextAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Background="DarkSlateBlue" Grid.Column="2" Grid.Row="1" Text="" TextAlignment="Center" VerticalAlignment="Center" x:Name="productName"/>
         <Button x:Name="productdetails" Grid.Column="2" Grid.Row="2" Content="Product Details" Click="Productdetails_Click"/>
     </Grid>
 </Window>

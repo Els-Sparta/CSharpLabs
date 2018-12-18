@@ -45,22 +45,23 @@ namespace Lab18_GUI_Entity
         {
             var order =
 
-                from p in DBContext.Products
-                join od in DBContext.Order_Details on p.ProductID equals od.ProductID
-                join o in DBContext.Orders on od.OrderID equals o.OrderID
-                join c in DBContext.Customers on o.CustomerID equals c.CustomerID
-                where c.ContactName == showName.Text
-                select p;
 
-            listBox02.ItemsSource = order.ToList<Product>();
+                from o in DBContext.Orders
+                where o.CustomerID == customer.CustomerID
+                select o;
+
+
+            listBox02.ItemsSource = order.ToList<Order>();
 
         }
+
+        Customer customer;
 
         private void ListBox01_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-                Customer customer = listBox01.SelectedItem as Customer;
+                customer = listBox01.SelectedItem as Customer;
 
                 showName.Text = customer.ContactName;
             }
@@ -69,14 +70,17 @@ namespace Lab18_GUI_Entity
                 //
             }
         }
-
+        public static Order order;
         private void ListBox02_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-                Product product = listBox02.SelectedItem as Product;
+                
+                order = listBox02.SelectedItem as Order;
 
-                productName.Text = product.ProductName;
+                productName.Text = order.OrderID.ToString();
+
+
             }
             catch
             {
@@ -84,9 +88,13 @@ namespace Lab18_GUI_Entity
             }
         }
 
+
         private void Productdetails_Click(object sender, RoutedEventArgs e)
         {
-           
+
+            var newWindow = new MyNewWindow();
+            newWindow.Show();
+
 
 
         }
